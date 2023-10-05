@@ -1,7 +1,22 @@
-const ItemListContainer = ({greeting}) =>{
+import { useEffect } from "react"
+import { pedirDatos } from "../../helpers/pedirDatos"
+import { useState } from "react"
+import ItemList from "../ItemList/ItemList";
+
+const ItemListContainer = () =>{
+
+    const [productos, setProductos] = useState([]);
+
+    useEffect (() => {
+        pedirDatos()
+            .then((res) => {
+                setProductos(res);
+            })
+    }, [])
+
     return (
         <div>
-            <h1>{greeting}</h1>
+            <ItemList productos={productos}/>
         </div>
     )
 }
