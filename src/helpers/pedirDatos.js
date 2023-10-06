@@ -8,3 +8,18 @@ export const pedirDatos = () => {
         }, 500)
     })
 }
+
+export const pedirItemId = (id) => {
+    return new Promise((resolve,reject) => {
+
+        const item = data.find((elem) => elem.id === id);
+
+        if(item) {
+            resolve(item)
+        } else {
+            reject({
+                error: "No se encontró el producto"
+            })
+        }
+    })
+}
