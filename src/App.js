@@ -4,28 +4,32 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Nosotros from './components/Nosotros';
-import ItemCount from './components/ItemCount/ItemCount';
+import Contacto from './components/Contacto/Contacto';
+import {CartProvider } from './context/CartContext';
+import Carrito from './components/Carrito/Carrito';
+import Checkout from './components/Checkout';
 
 
 function App() {
   return (
     <div>
-      <BrowserRouter>
+      <CartProvider>
+        <BrowserRouter>
         <NavBar/>
 
-        <Routes>
-          <Route path="/" element={<ItemListContainer/>} />
-          <Route path="/item/:id" element={<ItemDetailContainer/>}/>
-          <Route path="/productos" element={<ItemListContainer/>}/>
-          <Route path="/productos/:categoria" element={<ItemListContainer/>}/>
-          <Route path="/nosotros" element={<Nosotros/>}/>
-        </Routes>
-        </BrowserRouter>
-
-        <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log('Cantidad agregada', quantity)}/> 
+          <Routes>
+            <Route path="/" element={<ItemListContainer/>} />
+            <Route path="/item/:id" element={<ItemDetailContainer/>}/>
+            <Route path="/productos" element={<ItemListContainer/>}/>
+            <Route path="/productos/:categoria" element={<ItemListContainer/>}/>
+            <Route path="/nosotros" element={<Nosotros/>}/>
+            <Route path="/contacto" element={<Contacto/>}/>
+            <Route path="/carrito" element={<Carrito/>}/>
+            <Route path="/checkout" element={<Checkout/>}/>
+          </Routes>
+        </BrowserRouter>  
+      </CartProvider>       
       </div>
-
-    
   );
 }
 

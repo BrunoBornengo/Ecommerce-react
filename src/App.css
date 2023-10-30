@@ -5,6 +5,16 @@
   font-family: sans-serif;
 }
 
+.container {
+  max-width: 1140px;
+  padding-inline: 1.5rem;
+  margin: 0 auto;
+}
+
+.main-title {
+  margin-top: 2rem;
+}
+
 .navbar {
   padding: 2rem;
   display: flex;
@@ -104,4 +114,61 @@
   font-size: 2rem;
   margin-top: 2rem;
   font-weight: 600;
+}
+
+.item-count {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.item-count button, .agregar-carrito, .enviar {
+  background-color: #BCA37F;
+  border: 0;
+  width: 2rem;
+  height: 2rem;
+  color: white;
+  border-radius: .5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1;
+  border: 2px solid #BCA37F;
+  transition: .2s;
+}
+
+.item-count button:hover, .agregar-carrito:hover, .enviar:hover {
+  background-color: white;
+  color: black;
+}
+
+.agregar-carrito, .enviar {
+  width: auto;
+  height: auto;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  align-items: start;
+}
+
+.formulario input {
+  padding: .5rem;
+  width: 18rem;
+  border-radius: .5rem;
+  border: 2px solid black;
+}
+
+.formulario input:focus{
+  outline: 0;
+  border: 2px solid #BCA37F;
+  outline: 2px solid #BCA37F;
 }
